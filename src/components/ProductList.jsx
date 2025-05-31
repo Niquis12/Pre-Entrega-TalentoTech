@@ -6,7 +6,7 @@ const ProductList = ({productos, agregarCarrito}) => {
     <>
         <h2>Galeria de productos</h2>
         <div style={{display:"flex", flexWrap:"wrap", justifyContent:"space-evenly"}}>
-
+            {/* hola como va */}
           {
             productos.map(productos => (
 
