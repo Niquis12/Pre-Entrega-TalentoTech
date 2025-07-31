@@ -32,5 +32,28 @@ footer {
 }
 
 .fa-solid{
-    color: red;
+    color: #fff !important;
+}
+
+.cart-sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 350px;
+  height: 100%;
+  background: #fff;
+  box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+  z-index: 1000;
+  transition: transform 0.3s ease;
+  transform: translateX(0);
+}
+.cart-badge {
+  background: red;
+  color: #fff;
+  border-radius: 50%;
+  padding: 2px 8px;
+  font-size: 12px;
+  position: relative;
+  top: -20px;
+  right: 0px;
 }

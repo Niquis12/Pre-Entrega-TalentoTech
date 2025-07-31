@@ -24,7 +24,17 @@ const Products = ({productos, agregarCarrito}) => {
             <button className='qtyButton' onClick={increase}>+</button>
         </div>
 
-        <button onClick={()=> agregarCarrito(productos)}>Agregar al carrito</button>
+        <button
+          onClick={() =>
+            agregarCarrito({
+              ...productos,
+              cantidad: cantidad, // agrega la cantidad seleccionada
+              precio: Number(productos.precio) // asegúrate que el precio sea número
+            })
+          }
+        >
+          Agregar al carrito
+        </button>
     </section>
   )
 }

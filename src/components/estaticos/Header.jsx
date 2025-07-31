@@ -17,10 +17,23 @@ const Header = ({borrarProducto, cartItem}) => {
                 <li><Link to='/productos' className='link'>Galeria de productos</Link></li>
                 <li><Link to='/contacto' className='link'>Contacto</Link></li>
                 <li className='cartnav'> 
-                  <button className='btnCart' onClick={()=> setCartOpen(true)}><i className="fa-solid fa-cart-shopping"></i></button>
-                  <Cart borrarProducto={borrarProducto} cartItem={cartItem} isOpen={isCartOpen} onClose={()=> setCartOpen(false)}/> 
+                  <button className='btnCart' onClick={() => setCartOpen(true)}>
+                    <i className="fa-solid fa-cart-shopping"></i>
+                    {cartItem.length > 0 && (
+                      <span className="cart-badge">
+                        {cartItem.reduce((acc, item) => acc + (Number(item.cantidad) || 0), 0)}
+                      </span>
+                    )}
+                  </button>
+                  {isCartOpen && (
+                    <Cart
+                      borrarProducto={borrarProducto}
+                      cartItem={cartItem}
+                      isOpen={isCartOpen}
+                      onClose={() => setCartOpen(false)}
+                    />
+                  )}
                 </li>
-                
             </ul>
         </nav>
     </header>
